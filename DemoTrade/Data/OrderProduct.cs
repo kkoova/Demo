@@ -7,28 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoBook
+namespace DemoTrade.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Books
+    public partial class OrderProduct
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Books()
+        public OrderProduct()
         {
-            this.Rentals = new HashSet<Rentals>();
+            this.Order = new HashSet<Order>();
         }
     
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public int PublishedYear { get; set; }
-        public int AvailableCopies { get; set; }
-        public int GenreId { get; set; }
+        public double OrderID { get; set; }
+        public string ProductArticleNumber { get; set; }
     
-        public virtual Genres Genres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rentals> Rentals { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

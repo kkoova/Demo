@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Author" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PublishedYear" Type="int" Nullable="false" />
@@ -20,7 +20,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
         </EntityType>
@@ -112,7 +112,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Author" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PublishedYear" Type="Int32" Nullable="false" />
@@ -125,7 +125,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Books" Relationship="Self.FK__Books__GenreId__3E52440B" FromRole="Genres" ToRole="Books" />
@@ -194,7 +194,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DemoBookEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DemoBookEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Books" EntityType="Self.Books" />
           <EntitySet Name="Genres" EntityType="Self.Genres" />
           <EntitySet Name="Rentals" EntityType="Self.Rentals" />
@@ -217,7 +217,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище DemoBookModelContainer" CdmEntityContainer="DemoBookEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DemoBookModelContainer" CdmEntityContainer="DemoBookEntities1">
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="DemoBookModel.Books">
               <MappingFragment StoreEntitySet="Books">

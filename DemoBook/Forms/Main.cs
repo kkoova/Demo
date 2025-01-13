@@ -1,4 +1,5 @@
-﻿using DemoBook.UserControls;
+﻿using DemoBook.Data;
+using DemoBook.UserControls;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -55,6 +56,8 @@ namespace DemoBook.Forms
                 {
                     MessageBox.Show("Вы не авторизовались", "Гость", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+                ShowBooks();
             }
         }
 
@@ -80,9 +83,9 @@ namespace DemoBook.Forms
             }
         }
 
-        private void ShowBooks()
+        public void ShowBooks()
         {
-            using (var context = new DemoBookEntities())
+            using (var context = new DemoBookEntities1())
             {
                 flowLayoutPanel.Controls.Clear();
 
@@ -90,15 +93,7 @@ namespace DemoBook.Forms
 
                 foreach (var book in books)
                 {
-                    var bookControl = new UserControlBook();
-
-                    bookControl.SetBookData(
-                        title: book.Title,
-                        author: book.Author,
-                        genre: book.Genres.Name,
-                        year: book.PublishedYear,
-                        copy: book.AvailableCopies
-                    );
+                    var bookControl = new UserControlBook(book, UserRole);
 
                     flowLayoutPanel.Controls.Add(bookControl);
                 }
@@ -107,7 +102,7 @@ namespace DemoBook.Forms
 
         private void ShowGenres()
         {
-            using (var context = new DemoBookEntities())
+            using (var context = new DemoBookEntities1())
             {
                 flowLayoutPanel.Controls.Clear();
 
@@ -126,6 +121,39 @@ namespace DemoBook.Forms
                     flowLayoutPanel.Controls.Add(genreControl);
                 }
             }
+        }
+
+        public void ShowUsers()
+        {
+            using (var context = new DemoBookEntities1())
+            {
+                flowLayoutPanel.Controls.Clear();
+
+                var users = context.Users.ToList();
+
+                foreach (var user in users)
+                {
+                    var userControl = new UserControlUser(user);
+
+                    flowLayoutPanel.Controls.Add(userControl);
+                }
+            }
+        }
+        private void добавитьЖанрToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var addGenre = new AddGenre())
+            {
+                if (addGenre.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Жанр добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowBooks();
+                }
+            }
+        }
+
+        private void списокПользToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowUsers();
         }
     }
 }

@@ -98,7 +98,7 @@
             this.domainUpDownCopy.Name = "domainUpDownCopy";
             this.domainUpDownCopy.Size = new System.Drawing.Size(200, 20);
             this.domainUpDownCopy.TabIndex = 6;
-            this.domainUpDownCopy.Text = "domainUpDown1";
+            this.domainUpDownCopy.Text = "1";
             // 
             // label5
             // 

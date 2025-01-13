@@ -7,24 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoBook
+namespace DemoBook.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Genres
+    public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Genres()
+        public Users()
         {
-            this.Books = new HashSet<Books>();
+            this.Rentals = new HashSet<Rentals>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Books> Books { get; set; }
+        public virtual ICollection<Rentals> Rentals { get; set; }
     }
 }

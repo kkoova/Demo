@@ -7,20 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoBook
+namespace DemoTrade.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Rentals
+    public partial class Order
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public int BookId { get; set; }
-        public System.DateTime RentDate { get; set; }
-        public Nullable<System.DateTime> ReturnDate { get; set; }
+        public double OrderID { get; set; }
+        public Nullable<double> OrderArticule { get; set; }
+        public Nullable<double> OrderPostavjic { get; set; }
+        public Nullable<System.DateTime> OrderDateGo { get; set; }
+        public Nullable<System.DateTime> OrderDateDiv { get; set; }
+        public Nullable<int> OrderPunct { get; set; }
+        public Nullable<double> OrderCod { get; set; }
+        public Nullable<double> OrderStatus { get; set; }
     
-        public virtual Books Books { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual Klient Klient { get; set; }
+        public virtual OrderProduct OrderProduct { get; set; }
+        public virtual Status Status { get; set; }
     }
 }

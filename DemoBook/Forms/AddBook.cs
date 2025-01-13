@@ -1,27 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using DemoBook.Data;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DemoBook.Forms
 {
     public partial class AddBook : Form
     {
-        public AddBook()
+        private Books editBook;
+
+        public AddBook(Books editBook = null)
         {
             InitializeComponent();
 
             GenreAdd();
+            this.editBook = editBook;
+
+            if (editBook != null) 
+            {
+                Text = "Редактрование";
+                addBtn.Text = "Редактировать книгу";
+                textBoxTitle.Text = editBook.Title;
+                textBoxAutor.Text = editBook.Author;
+                textBoxYear.Text = editBook.PublishedYear.ToString();
+                comboBoxGenre.SelectedValue = editBook.GenreId;
+            }
         }
 
         private void GenreAdd()
         {
-            using (var context = new DemoBookEntities())
+            using (var context = new DemoBookEntities1())
             {
                 var genres = context.Genres.ToList();
                 comboBoxGenre.DataSource = genres;
@@ -38,18 +46,35 @@ namespace DemoBook.Forms
             var copy = Convert.ToInt16(domainUpDownCopy.Text);
             var genre = Convert.ToInt16(comboBoxGenre.SelectedValue);
 
-            using (var context = new DemoBookEntities()) 
+            using (var context = new DemoBookEntities1()) 
             {
-                var newBook = new Books
+                if (editBook != null)
                 {
-                    Title = title,
-                    Author = autor,
-                    PublishedYear = year,
-                    AvailableCopies = copy,
-                    GenreId = genre,
-                };
+                    var book = context.Books.Find(editBook.Id);
 
-                context.Books.Add(newBook);
+                    if (book != null)
+                    {
+                        book.Title = title;
+                        book.Author = autor;
+                        book.GenreId = genre;
+                        book.PublishedYear = year;
+                        book.AvailableCopies = copy;
+                    }
+                }
+                else 
+                {
+                    var newBook = new Books
+                    {
+                        Title = title,
+                        Author = autor,
+                        PublishedYear = year,
+                        AvailableCopies = copy,
+                        GenreId = genre,
+                    };
+
+                    context.Books.Add(newBook);
+                }
+
                 context.SaveChanges();
             }
 

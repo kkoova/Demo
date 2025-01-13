@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51d9f16e21d74ee08b450d6bade78abd" Name="Diagram1">
+        <EntityTypeShape EntityType="DemoTradeModel.Category" Width="1.5" PointX="2.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.CategoryProd" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.Klient" Width="1.5" PointX="5.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.Order" Width="1.5" PointX="8" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.OrderProduct" Width="1.5" PointX="5.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.OrderPunkt" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.Product" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.ProductManufacturer" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.Role" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.Status" Width="1.5" PointX="5.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.Supplier" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTradeModel.User" Width="1.5" PointX="10" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="DemoTradeModel.FK_Product_CategoryProd" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTradeModel.FK_Order_Klient" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTradeModel.FK_Order_OrderProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTradeModel.FK_Order_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTradeModel.FK_Product_ProductManufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTradeModel.FK_Product_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTradeModel.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

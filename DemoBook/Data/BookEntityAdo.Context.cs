@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoBook
+namespace DemoBook.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DemoBookEntities : DbContext
+    public partial class DemoBookEntities1 : DbContext
     {
-        public DemoBookEntities()
-            : base("name=DemoBookEntities")
+        public DemoBookEntities1()
+            : base("name=DemoBookEntities1")
         {
         }
     

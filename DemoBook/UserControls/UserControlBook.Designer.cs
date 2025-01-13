@@ -35,10 +35,10 @@
             this.copiiLable = new System.Windows.Forms.Label();
             this.genreTextox = new System.Windows.Forms.TextBox();
             this.autorLable = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1.SuspendLayout();
+            this.toolStripEdit = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDelite = new System.Windows.Forms.ToolStripButton();
+            this.toolStripEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // TitleLable
@@ -102,41 +102,44 @@
             this.autorLable.TabIndex = 6;
             this.autorLable.Text = "label1";
             // 
-            // toolStrip1
+            // toolStripEdit
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(212, 25);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonEdit,
+            this.toolStripButtonDelite});
+            this.toolStripEdit.Location = new System.Drawing.Point(0, 0);
+            this.toolStripEdit.Name = "toolStripEdit";
+            this.toolStripEdit.Size = new System.Drawing.Size(212, 25);
+            this.toolStripEdit.TabIndex = 7;
+            this.toolStripEdit.Text = "toolStrip1";
+            this.toolStripEdit.Visible = false;
             // 
-            // toolStripButton1
+            // toolStripButtonEdit
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::DemoBook.Properties.Resources.edit_clear_all_icon_180807;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEdit.Image = global::DemoBook.Properties.Resources.edit_clear_all_icon_180807;
+            this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEdit.Name = "toolStripButtonEdit";
+            this.toolStripButtonEdit.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonEdit.Text = "Редактировать книгу";
+            this.toolStripButtonEdit.Click += new System.EventHandler(this.toolStripButtonEdit_Click);
             // 
-            // toolStripButton2
+            // toolStripButtonDelite
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::DemoBook.Properties.Resources._2849810_cross_delite_error_interface_multimedia_107973;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButtonDelite.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelite.Image = global::DemoBook.Properties.Resources._2849810_cross_delite_error_interface_multimedia_107973;
+            this.toolStripButtonDelite.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelite.Name = "toolStripButtonDelite";
+            this.toolStripButtonDelite.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDelite.Text = "Удалить книгу";
+            this.toolStripButtonDelite.Click += new System.EventHandler(this.toolStripButtonDelite_Click);
             // 
             // UserControlBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStripEdit);
             this.Controls.Add(this.autorLable);
             this.Controls.Add(this.genreTextox);
             this.Controls.Add(this.copiiLable);
@@ -146,8 +149,8 @@
             this.Controls.Add(this.TitleLable);
             this.Name = "UserControlBook";
             this.Size = new System.Drawing.Size(212, 248);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStripEdit.ResumeLayout(false);
+            this.toolStripEdit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,8 +165,8 @@
         private System.Windows.Forms.Label copiiLable;
         private System.Windows.Forms.TextBox genreTextox;
         private System.Windows.Forms.Label autorLable;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStrip toolStripEdit;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEdit;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelite;
     }
 }

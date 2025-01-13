@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoBook.Data;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -18,7 +19,7 @@ namespace DemoBook.Forms
             Username = loginTxtBox.Text;
             var Password = passTxtBox.Text;
 
-            using (var context = new DemoBookEntities())
+            using (var context = new DemoBookEntities1())
             {
                 var user = context.Users
                     .FirstOrDefault(u => u.Username == Username && u.Password == Password);
