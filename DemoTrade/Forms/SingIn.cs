@@ -1,12 +1,6 @@
 ﻿using DemoTrade.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DemoTrade.Forms
@@ -40,7 +34,16 @@ namespace DemoTrade.Forms
                 var result = MessageBox.Show($"С возвращенем {user.UserName} {user.UserPatronymic} Роль: {user.Role.RoleName}", "", MessageBoxButtons.OKCancel);
 
                 if (result == DialogResult.OK)
-                { var main = new Main(user); }
+                {           
+                    using (var main = new Main(user))
+                    {
+                        Hide();
+                        if (main.ShowDialog() == DialogResult.Cancel) 
+                        {
+                            Show();
+                        }
+                    }
+                }
             }
         }
     }
